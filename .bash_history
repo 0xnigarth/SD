@@ -14,3 +14,7 @@ ls tmp
 cd tmp/
 clear
 exit
+rails g controller Labels
+bundle
+bundle
+exit

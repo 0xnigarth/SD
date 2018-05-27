@@ -1,0 +1,30 @@
+<table class="table separation-top">
+  <thead class="table-header text-left">
+    <tr>
+      <th>tracking_number</th>
+      <th>carrier</th>
+      <th>length</th>
+      <th>width</th>
+      <th>height</th>
+      <th>weight</th>
+      <th>distance_unit</th>
+      <th>mass_unit</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @data.each do |label| %>
+      <tr>
+        <td><%= label.tracking_number %></td>
+        <td><%= label.carrier %></td>
+        <td><%= label.parcel.length %></td>
+        <td><%= label.parcel.width %></td>
+        <td><%= label.parcel.height %></td>
+        <td><%= label.parcel.weight %></td>
+        <td><%= label.parcel.distance_unit %></td>
+        <td><%= label.parcel.mass_unit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
