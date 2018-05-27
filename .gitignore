@@ -9,31 +9,18 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/tmp
+/tmp/*
 !/log/.keep
 !/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
 
 /node_modules
 /yarn-error.log
 
+/public/assets
 .byebug_history
 
-# Ignore all logfiles and tempfiles.
-*.swp
-*.swo
-*.DS_Store
-npm-debug.log
-
-# Ignore test coverage files
-coverage
-*.env
-/public/uploads/*
-.bash_history
-# Ignore Byebug/Bash/etc command history file.
-/.*_hist*
-.cache/
-.gem/
-first_session.txt
-
-# Ignore application configuration
-/config/application.yml
+# Ignore master key for decrypting credentials and more.
+/config/master.key

@@ -23,12 +23,12 @@ services:
       context: .
       dockerfile: dev.Dockerfile
     # The name our development image will use:
-    image: skydrpo/labels:development
-    command: rails server -b 0.0.0.0 -p 4000
+    image: skydrop_development
+    command: rails server -b 0.0.0.0 -p 3000
     ports:
       # This will bind your port 3000 with the container's port 3000, so we can
       # use 'http://localhost:3000' to see our Rails app:
-      - 4000:4000
+      - 3000:3000
     links:
       # Makes the postgres service a dependency for our app, and also makes it
       # visible at the 'db' hostname from this container:
@@ -47,8 +47,8 @@ services:
     tty: true
     environment:
       # Notice that this is the DB we'll use:
-      DATABASE_URL: postgres://postgres:password!@db:5432/skydrpo_development
+      DATABASE_URL: postgres://postgres:password!@db:5432/skydrop_development
       # We'll use this env variable to make the log output gets directed
       # to Docker:
       RAILS_LOG_TO_STDOUT: "true"
-      DEVISE_MAILER_SENDER: "no-reply@arto.com"
+      DEVISE_MAILER_SENDER: "no-reply@skydrop.com"

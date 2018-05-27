@@ -16,7 +16,7 @@ function wait_setup { echo "Waiting for app setup to finish..."; sleep $APP_SETU
 trap unlock_setup HUP INT QUIT KILL TERM EXIT
 
 # 3: Specify a default command, in case it wasn't issued:
-if [ -z "$1" ]; then set -- rails server -p 3000 -b 0.0.0.0 "$@"; fi
+if [ -z "$1" ]; then set -- rails server -p 4000 -b 0.0.0.0 "$@"; fi
 
 # 4: Run the checks only if the app code is going to be executed:
 if [[ "$1" = "rails" || "$1" = "sidekiq" ]]
