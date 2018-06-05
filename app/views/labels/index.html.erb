@@ -15,8 +15,18 @@
       <th>API weight</th>
       <th>API distance_unit</th>
       <th>API mass_unit</th>
-      <th>volumetric weight</th>
-      <th>Weight in kilos</th>
+      <th>API volumetric weight</th>
+      <th>API Weight in kilos</th>
+      <th>FILE Weight in kilos</th>
+      <th>FILE volumetric weight</th>
+
+      <th>Max Weight TXT</th>
+      <th>Max Weight FILE</th>
+      <th>Max Weight API</th>
+      <th>Max weight file value</th>
+      <th>Max weight api value</th>
+      <th>Has over weight</th>
+      <th>Amount of overweight</th>
 
 
     </tr>
@@ -38,8 +48,17 @@
         <td><%= label.api_weight %></td>
         <td><%= label.api_distance_unit %></td>
         <td><%= label.api_weight_unit %></td>
-        <td><%= label.volumetric_weight %></td>
+        <td><%= label.api_volumetric_weight %></td>
         <td><%= label.api_weight_in_kg %></td>
+        <td><%= label.file_weight_in_kg %></td>
+        <td><%= label.file_volumetric_weight %></td>
+        <td><%= label.max_weight_txt %></td>
+        <td><%= label.max_weight_file %></td>
+        <td><%= label.max_weight_api %></td>
+        <td><%= label.max_weight_file_value %></td>
+        <td><%= label.max_weight_api_value %></td>
+        <td><%= label.has_over_weight? %></td>
+        <td><%= label.amount_of_over_weight %></td>
       </tr>
     <% end %>
   </tbody>
