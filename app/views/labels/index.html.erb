@@ -3,12 +3,20 @@
     <tr>
       <th>tracking_number</th>
       <th>carrier</th>
-      <th>length</th>
-      <th>width</th>
-      <th>height</th>
-      <th>weight</th>
-      <th>distance_unit</th>
-      <th>mass_unit</th>
+      <th>File length</th>
+      <th>File width</th>
+      <th>File height</th>
+      <th>File weight</th>
+      <th>File distance_unit</th>
+      <th>File mass_unit</th>
+      <th>API length</th>
+      <th>API width</th>
+      <th>API height</th>
+      <th>API weight</th>
+      <th>API distance_unit</th>
+      <th>API mass_unit</th>
+      <th>volumetric weight</th>
+      <th>Weight in kilos</th>
 
 
     </tr>
@@ -18,12 +26,20 @@
       <tr>
         <td><%= label.tracking_number %></td>
         <td><%= label.carrier %></td>
-        <td><%= label.parcel.length %></td>
-        <td><%= label.parcel.width %></td>
-        <td><%= label.parcel.height %></td>
-        <td><%= label.parcel.weight %></td>
-        <td><%= label.parcel.distance_unit %></td>
-        <td><%= label.parcel.mass_unit %></td>
+        <td><%= label.file_length %></td>
+        <td><%= label.file_width %></td>
+        <td><%= label.file_height %></td>
+        <td><%= label.file_weight %></td>
+        <td><%= label.file_distance_unit %></td>
+        <td><%= label.file_mass_unit %></td>
+        <td><%= label.api_length %></td>
+        <td><%= label.api_width %></td>
+        <td><%= label.api_height %></td>
+        <td><%= label.api_weight %></td>
+        <td><%= label.api_distance_unit %></td>
+        <td><%= label.api_weight_unit %></td>
+        <td><%= label.volumetric_weight %></td>
+        <td><%= label.api_weight_in_kg %></td>
       </tr>
     <% end %>
   </tbody>

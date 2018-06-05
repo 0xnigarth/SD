@@ -18,3 +18,17 @@ rails g controller Labels
 bundle
 bundle
 exit
+bundle install
+exit
+rails c
+rails g model FedexLabelData
+rails g migration AddFedexDatumProperties
+rails c
+rails db:migrate
+rails c
+rails db:migrate
+rails c
+rails db:migrate
+rails db:rollback
+rails db:migrate
+exit
