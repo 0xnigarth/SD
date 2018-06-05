@@ -74,27 +74,27 @@ class FedexLabelDatum < ApplicationRecord
   end
 
   def ceil_weights
-    {'file_weight_in_kg': file_weight_in_kg.ceil, 'file_volumetric_weight': file_volumetric_weight.ceil, 'api_volumetric_weight': api_volumetric_weight.ceil, 'api_weight_in_kg': api_weight_in_kg.ceil}
+    {'file_weight_in_kg': file_weight_in_kg, 'file_volumetric_weight': file_volumetric_weight, 'api_volumetric_weight': api_volumetric_weight, 'api_weight_in_kg': api_weight_in_kg}
   end
 
   def max_weight_txt
-    ceil_weights.sort_by { |name, value| value }[0][0]
+    ceil_weights.sort_by { |name, value| value.ceil }[0][0]
   end
 
   def file_weights
-    {'file_weight_in_kg': file_weight_in_kg.ceil, 'file_volumetric_weight': file_volumetric_weight.ceil}
+    {'file_weight_in_kg': file_weight_in_kg, 'file_volumetric_weight': file_volumetric_weight}
   end
 
   def api_weights
-    {'api_volumetric_weight': api_volumetric_weight.ceil, 'api_weight_in_kg': api_weight_in_kg.ceil}
+    {'api_volumetric_weight': api_volumetric_weight, 'api_weight_in_kg': api_weight_in_kg}
   end
 
   def max_weight_api
-api_weights.sort_by { |name, value| value }[0][0]
+api_weights.sort_by { |name, value| value.ceil }[0][0]
   end
 
   def max_weight_file
-file_weights.sort_by { |name, value| value }[0][0]
+file_weights.sort_by { |name, value| value.ceil  }[0][0]
   end
 
   def max_weight_file_value
@@ -114,6 +114,6 @@ file_weights.sort_by { |name, value| value }[0][0]
 
 
   def amount_of_over_weight
-    (max_weight_file_value - max_weight_api_value).abs
+    [(max_weight_file_value - max_weight_api_value),0].min.abs
   end
 end
